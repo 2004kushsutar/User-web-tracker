@@ -5,27 +5,62 @@ import api from "./api";
 export default function Heatmap() {
 
 
+    const [pages, setPages] = useState([]);
+
+    const [selected, setSelected] = useState("");
+
     const [points, setPoints] = useState([]);
 
-    const [url, setUrl] = useState("");
+
+
+    useEffect(() => {
+
+
+        api.get("/pages")
+            .then(res => {
+
+                setPages(res.data);
+
+
+                if (res.data.length) {
+
+                    setSelected(res.data[0]);
+
+                }
+
+            });
+
+
+    }, []);
 
 
 
-    function loadHeatmap() {
+
+
+    useEffect(() => {
+
+
+        if (!selected) return;
 
 
         api.get("/heatmap",
             {
+
                 params: {
-                    url: url
+                    url: selected
                 }
+
             })
             .then(res => {
-                setPoints(res.data)
-            })
+
+                setPoints(res.data);
+
+            });
 
 
-    }
+    }, [selected]);
+
+
 
 
 
@@ -34,53 +69,102 @@ export default function Heatmap() {
         <div>
 
 
-            <h2>
-                Heatmap View
-            </h2>
+            <div className="flex justify-between items-center mb-5">
 
 
-            <input
+                <div>
 
-                placeholder="Page URL"
+                    <h2 className="text-xl font-bold">
 
-                value={url}
+                        Click Heatmap
 
-                onChange={
-                    e => setUrl(e.target.value)
-                }
-
-            />
+                    </h2>
 
 
-            <button
-                onClick={loadHeatmap}
-            >
-                Show
-            </button>
+                    <p className="text-slate-400 text-sm">
+
+                        Visualize click distribution
+
+                    </p>
+
+
+                </div>
+
+
+
+                <select
+
+                    value={selected}
+
+                    onChange={
+                        e => setSelected(e.target.value)
+                    }
+
+                    className="
+bg-[#111827]
+border
+border-slate-700
+rounded-lg
+p-3
+text-white
+w-80
+outline-none
+"
+
+                >
+
+
+                    {
+                        pages.map(page =>
+
+                            <option
+                                key={page}
+                                value={page}
+                                className="bg-[#111827] text-white"
+                            >
+
+                                {page}
+
+                            </option>
+
+                        )
+
+                    }
+
+
+                </select>
+
+
+            </div>
+
+
 
 
 
             <div
 
-                style={{
-
-                    position: "relative",
-
-                    width: "800px",
-
-                    height: "500px",
-
-                    border: "2px solid black",
-
-                    marginTop: "20px"
-
-                }}
+                className="
+relative
+h-[500px]
+rounded-xl
+border
+border-slate-700
+bg-[#0b0f19]
+overflow-hidden
+"
 
             >
 
 
-                {
+                <div >
 
+                    {/* {selected} */}
+
+                </div>
+
+
+
+                {
                     points.map((p, i) => (
 
 
@@ -94,23 +178,42 @@ export default function Heatmap() {
 
                                 left: p.x,
 
-                                top: p.y,
-
-                                width: "15px",
-
-                                height: "15px",
-
-                                background: "red",
-
-                                borderRadius: "50%"
+                                top: p.y
 
                             }}
+
+                            className="
+w-5
+h-5
+bg-orange-500
+rounded-full
+shadow-[0_0_25px_orange]
+"
 
 
                         />
 
 
                     ))
+
+                }
+
+
+
+                {
+                    points.length === 0 &&
+
+                    <div className="
+h-full
+flex
+items-center
+justify-center
+text-slate-500
+">
+
+                        No clicks recorded
+
+                    </div>
 
                 }
 

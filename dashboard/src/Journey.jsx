@@ -23,7 +23,7 @@ export default function Journey({ id }) {
 
     return (
 
-        <div>
+        <div className="h-[500px] overflow-y-auto pr-3">
 
 
             <h2>
@@ -33,52 +33,66 @@ export default function Journey({ id }) {
 
             {
 
-                events.map((event, index) => (
+                <div className="space-y-4">
 
-                    <div
-                        key={index}
-
-                        className=" border-l-4 border-blue-500 pl-4 mb-5 bg-slate-50 p-4 rounded-lg shadow-sm "
-                    >
+                    {
+                        events.map((event, index) => (
 
 
-                        {new Date(
-                            event.timestamp
-                        ).toLocaleString()}
+                            <div
+                                key={index}
+                                className="
+border-l-2
+border-orange-500
+pl-4
+bg-slate-900
+p-4
+rounded-lg
+"
+                            >
 
 
-                        <br />
+                                <p className="text-xs text-slate-400">
+
+                                    {new Date(event.timestamp)
+                                        .toLocaleString()}
+
+                                </p>
 
 
-                        <b>
-                            {event.event_type}
-                        </b>
+                                <h3 className="font-bold">
+
+                                    {event.event_type}
+
+                                </h3>
 
 
-                        <br />
+                                <p className="text-slate-400 text-sm">
+
+                                    {event.page_url}
+
+                                </p>
 
 
-                        Page:
+                                {
+                                    event.event_type === "click" &&
 
-                        {event.page_url}
+                                    <p className="text-orange-400 text-sm">
 
+                                        x:{event.x} y:{event.y}
 
-                        {
+                                    </p>
 
-                            event.event_type === "click" &&
-
-                            <p>
-                                Position:
-                                ({event.x},{event.y})
-                            </p>
-
-                        }
+                                }
 
 
-                    </div>
+                            </div>
 
 
-                ))
+                        ))
+                    }
+
+                </div>
 
             }
 

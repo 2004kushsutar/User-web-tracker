@@ -21,56 +21,51 @@ export default function Sessions({ onSelectSession }) {
 
         <div>
 
-            <h2>
+
+            <h2 className="text-xl font-bold mb-4">
                 Sessions
             </h2>
 
 
             {
-                sessions.map(session => (
+                sessions.map(s =>
 
                     <div
 
-                        key={session._id}
+                        key={s._id}
 
-                        onClick={() =>
-                            onSelectSession(session._id)
-                        }
+                        onClick={() => onSelectSession(s._id)}
 
-                        className=" p-4 rounded-xl border border-slate-200 hover:bg-slate-100 cursor-pointer transition mb-3 shadow-sm "
+                        className="
+border-b
+border-slate-800
+p-4
+cursor-pointer
+hover:bg-slate-800
+rounded-lg
+"
 
                     >
 
-                        <p className="font-semibold text-slate-700">
 
-                            Session
+                        <p className="text-orange-400 font-semibold">
 
-                        </p>
-
-
-                        <p className="text-sm text-slate-500 break-all">
-
-                            {session._id}
+                            {s._id}
 
                         </p>
 
 
-                        <p className="mt-2 font-bold">
+                        <p className="text-slate-300">
 
                             Events:
-
-                            <span className="text-blue-600">
-
-                                {session.totalEvents}
-
-                            </span>
+                            {s.totalEvents}
 
                         </p>
 
 
                     </div>
 
-                ))
+                )
 
             }
 

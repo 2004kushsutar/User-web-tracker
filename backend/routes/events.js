@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require("express");
+const router = express.Router();
 
 const Event = require('../models/event');
 
@@ -57,6 +58,26 @@ router.get("/heatmap", async (req, res) => {
     });
 
     res.json(events);
+
+});
+
+// Get all unique page URLs
+
+router.get("/pages", async (req, res) => {
+
+    try {
+
+        const pages = await Event.distinct("page_url");
+
+        res.json(pages);
+
+    } catch (error) {
+
+        res.status(500).json({
+            message: error.message
+        });
+
+    }
 
 });
 
