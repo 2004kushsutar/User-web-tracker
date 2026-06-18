@@ -23,7 +23,7 @@ export default function Journey({ id }) {
 
     return (
 
-        <div className="h-[500px] overflow-y-auto pr-3">
+        <div className="h-125 overflow-y-auto pr-3">
 
 
             <h2>

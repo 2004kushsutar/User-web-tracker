@@ -81,12 +81,12 @@ export default function App() {
       <aside className="w-64 border-r border-slate-800 p-6 hidden md:block">
 
 
-        <h1 className="text-2xl font-bold mb-10">
+        <h1 className="text-4xl font-bold mb-10">
           ⚡ Trackr
         </h1>
 
 
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
 
 
           <div className="bg-slate-800 rounded-lg p-3">
@@ -99,11 +99,11 @@ export default function App() {
           </div>
 
 
-        </div>
+        </div> */}
 
 
 
-        <div className="fixed bottom-6 w-52 border border-slate-700 rounded-xl p-4">
+        {/* <div className="fixed bottom-6 w-52 border border-slate-700 rounded-xl p-4">
 
 
           <p className="text-green-400">
@@ -116,7 +116,7 @@ export default function App() {
           </p>
 
 
-        </div>
+        </div> */}
 
 
       </aside>
@@ -257,11 +257,14 @@ export default function App() {
 
 
           <div className="
-          bg-[#151927]
-          border border-slate-800
-          rounded-xl
-          p-5
-          ">
+bg-[#151927]
+border border-slate-800
+rounded-xl
+p-5
+h-125
+overflow-y-auto
+pr-3
+">
 
 
             <Sessions

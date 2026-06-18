@@ -106,6 +106,8 @@ border
 border-slate-700
 rounded-lg
 p-3
+pl-4
+pr-12
 text-white
 w-80
 outline-none
@@ -120,7 +122,7 @@ outline-none
                             <option
                                 key={page}
                                 value={page}
-                                className="bg-[#111827] text-white"
+                                className="bg-[#111827] text-white "
                             >
 
                                 {page}
@@ -145,7 +147,7 @@ outline-none
 
                 className="
 relative
-h-[500px]
+h-125
 rounded-xl
 border
 border-slate-700
