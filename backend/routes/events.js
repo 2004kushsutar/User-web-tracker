@@ -61,6 +61,16 @@ router.get("/heatmap", async (req, res) => {
 
 });
 
+// Get all events
+router.get("/all", async (req, res) => {
+    try {
+        const events = await Event.find({});
+        res.json(events);
+    } catch (e) {
+        res.status(500).json(e);
+    }
+});
+
 // Get all unique page URLs
 
 router.get("/pages", async (req, res) => {

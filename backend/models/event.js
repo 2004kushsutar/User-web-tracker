@@ -15,8 +15,11 @@ const eventSchema = new mongoose.Schema({
         default: Date.now
     },
 
-    x:Number,
-    y:Number
+    x: Number,
+    y: Number,
+
+    page_width: Number,
+    page_height: Number
 });
 
 module.exports = mongoose.model('Event', eventSchema);

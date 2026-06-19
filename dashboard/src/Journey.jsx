@@ -23,17 +23,17 @@ export default function Journey({ id }) {
 
     return (
 
-        <div className="h-125 overflow-y-auto pr-3">
+        <div className="h-full overflow-y-auto pr-3 scroll-smooth">
 
 
-            <h2>
+            <h2 className="text-lg font-bold mb-3">
                 User Journey
             </h2>
 
 
             {
 
-                <div className="space-y-4">
+                <div className="space-y-3">
 
                     {
                         events.map((event, index) => (
@@ -46,7 +46,7 @@ border-l-2
 border-orange-500
 pl-4
 bg-slate-900
-p-4
+p-3
 rounded-lg
 "
                             >

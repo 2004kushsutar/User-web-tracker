@@ -73,15 +73,30 @@ export default function App() {
 
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-white flex">
+    <div className="
+min-h-screen
+w-screen
+bg-[#0b0f19]
+text-white
+flex
+overflow-x-hidden
+">
 
 
       {/* Sidebar */}
 
-      <aside className="w-64 border-r border-slate-800 p-6 hidden md:block">
+      <aside className="
+w-64
+shrink-0
+border-r
+border-slate-800
+p-6
+hidden
+md:block
+">
 
 
-        <h1 className="text-4xl font-bold mb-10">
+        <h1 className="text-2xl font-bold mb-6">
           ⚡ Trackr
         </h1>
 
@@ -127,7 +142,12 @@ export default function App() {
 
       {/* Main */}
 
-      <main className="flex-1 p-8">
+      <main className="
+flex-1
+p-8
+min-w-0
+overflow-hidden
+">
 
 
 
@@ -137,7 +157,7 @@ export default function App() {
           <div>
 
 
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-2xl font-bold mb-1">
               Sessions
             </h1>
 
@@ -151,7 +171,7 @@ export default function App() {
 
 
 
-          <div className="text-slate-400 text-sm">
+          {/* <div className="text-slate-400 text-sm">
 
             Tracking
 
@@ -159,7 +179,7 @@ export default function App() {
               ● Live
             </span>
 
-          </div>
+          </div> */}
 
 
         </div>
@@ -177,7 +197,7 @@ export default function App() {
           bg-[#151927]
           border border-slate-800
           rounded-xl
-          p-5
+          p-4
           ">
 
 
@@ -186,7 +206,7 @@ export default function App() {
             </p>
 
 
-            <h2 className="text-3xl font-bold mt-2">
+            <h2 className="text-2xl font-bold mt-1">
               {sessions.length}
             </h2>
 
@@ -201,7 +221,7 @@ export default function App() {
           bg-[#151927]
           border border-slate-800
           rounded-xl
-          p-5
+          p-4
           ">
 
 
@@ -210,7 +230,7 @@ export default function App() {
             </p>
 
 
-            <h2 className="text-3xl font-bold mt-2">
+            <h2 className="text-2xl font-bold mt-1">
               {totalEvents}
             </h2>
 
@@ -225,7 +245,7 @@ export default function App() {
           bg-[#151927]
           border border-slate-800
           rounded-xl
-          p-5
+          p-4
           ">
 
 
@@ -234,7 +254,7 @@ export default function App() {
             </p>
 
 
-            <h2 className="text-3xl font-bold mt-2">
+            <h2 className="text-2xl font-bold mt-1">
               {clicks}
             </h2>
 
@@ -260,8 +280,8 @@ export default function App() {
 bg-[#151927]
 border border-slate-800
 rounded-xl
-p-5
-h-125
+p-4
+h-96
 overflow-y-auto
 pr-3
 ">
@@ -286,7 +306,8 @@ pr-3
           bg-[#151927]
           border border-slate-800
           rounded-xl
-          p-5
+          p-4
+          h-96
           ">
 
 
@@ -331,7 +352,7 @@ pr-3
         bg-[#151927]
         border border-slate-800
         rounded-xl
-        p-5
+        p-4
         ">
 
 

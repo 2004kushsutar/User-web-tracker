@@ -22,7 +22,7 @@ export default function Sessions({ onSelectSession }) {
         <div>
 
 
-            <h2 className="text-xl font-bold mb-4">
+            <h2 className="text-lg font-bold mb-3">
                 Sessions
             </h2>
 
@@ -39,7 +39,7 @@ export default function Sessions({ onSelectSession }) {
                         className="
 border-b
 border-slate-800
-p-4
+p-3
 cursor-pointer
 hover:bg-slate-800
 rounded-lg
