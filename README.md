@@ -10,8 +10,7 @@ A lightweight, full-stack web analytics platform that tracks user interactions (
 web event tracking/
 ├── backend/              # Node.js + Express REST API
 ├── dashboard/            # React analytics dashboard (Vite)
-├── product landing page/ # React product page with event tracking (Vite)
-└── demoPage/             # Standalone HTML demo page (optional)
+└── product landing page/ # React demo product page with event tracking (Vite)
 ```
 
 ---
@@ -41,11 +40,6 @@ web event tracking/
 ---
 
 ## ⚙️ Setup Steps
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) v18+
-- A free [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account (or a local MongoDB instance)
 
 ---
 
@@ -130,8 +124,6 @@ Now visit the landing page, click around, and watch the events appear in your da
 ---
 
 ## 🚀 Production Deployment
-
-For a full production deployment guide (using **Render** for the backend and **Vercel** for the frontends), see the [Walkthrough Document](./walkthrough.md).
 
 In summary:
 1. Deploy `backend/` to Render — add your `MONGODB_URI` as an environment variable.

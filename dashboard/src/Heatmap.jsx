@@ -186,7 +186,7 @@ export default function Heatmap() {
             <div
 
                 className="
-h-[600px]
+h-150
 rounded-xl
 border
 border-slate-700
