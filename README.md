@@ -1,6 +1,8 @@
 # ⚡ Web Event Tracker
 
 A lightweight, full-stack web analytics platform that tracks user interactions (clicks, page views) on a landing page and visualizes them on a real-time dashboard — including session journeys and a click heatmap.
+![alt text](image.png)
+![alt text](image-1.png)
 
 ---
 
